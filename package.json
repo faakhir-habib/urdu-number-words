@@ -6,7 +6,7 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/faakhir-habib/urdu-number-words.git"
+    "url": "git+https://github.com/faakhir-habib/urdu-number-words.git"
   },
   "keywords": [
     "urdu",
