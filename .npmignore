@@ -1,0 +1,17 @@
+# Source files (consumers only need dist/)
+src/
+tests/
+
+# Config files
+tsconfig.json
+tsup.config.ts
+.gitignore
+.eslintrc*
+.prettierrc*
+vitest.config*
+CONTRIBUTING.md
+
+# Dev artifacts
+*.tsbuildinfo
+coverage/
+.nyc_output/

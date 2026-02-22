@@ -1,0 +1,59 @@
+{
+  "name": "urdu-number-words",
+  "version": "1.0.0",
+  "description": "Convert numbers to Urdu words using the South Asian numbering system (لاکھ، کروڑ، ارب). Zero dependencies.",
+  "author": "Faakhir Habib",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/faakhir-habib/urdu-number-words.git"
+  },
+  "keywords": [
+    "urdu",
+    "number",
+    "words",
+    "pakistan",
+    "currency",
+    "rupee",
+    "lakh",
+    "crore",
+    "arab",
+    "south-asian",
+    "numbering"
+  ],
+  "type": "module",
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.js",
+  "browser": "./dist/index.iife.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": {
+        "types": "./dist/index.d.ts",
+        "default": "./dist/index.js"
+      },
+      "require": {
+        "types": "./dist/index.d.cts",
+        "default": "./dist/index.cjs"
+      }
+    }
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "tsup",
+    "dev": "tsup --watch",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "test:coverage": "vitest run --coverage",
+    "typecheck": "tsc --noEmit",
+    "prepublishOnly": "npm run build && npm test"
+  },
+  "devDependencies": {
+    "@vitest/coverage-v8": "^1.6.0",
+    "tsup": "^8.0.0",
+    "typescript": "^5.4.0",
+    "vitest": "^1.6.0"
+  }
+}
