@@ -25,8 +25,6 @@ Uses the South Asian numbering system — لاکھ، کروڑ، ارب
 
 Pakistan's financial, legal, and business systems require numbers written in Urdu words — from cheque printing to government documents to invoices. Urdu has **unique words for every number from 1 to 100** (unlike English where you can combine "twenty" + "one"), and uses the South Asian numbering system (لاکھ، کروڑ، ارب) instead of millions and billions.
 
-No npm package existed that handled this correctly — until now.
-
 **Perfect for:**
 
 - 🏦 Cheque printing systems
