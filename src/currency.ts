@@ -6,10 +6,10 @@ import { splitDecimal } from './utils.js';
 /**
  * Formats a number as Pakistani Rupees in Urdu words.
  *
- * Standard format: "ایک ہزار پانچ سو روپے صرف"
- * With paisa:      "ایک ہزار پانچ سو روپے اور پچھتر پیسے صرف"
- * Zero rupees:     "صفر روپے اور پچاس پیسے صرف"
- * appendOnly:      only appends "صرف" to whatever is already built
+ * Standard format: "ایک ہزار پانچ سو روپے"
+ * With paisa:      "ایک ہزار پانچ سو روپے اور پچھتر پیسے"
+ * Zero rupees:     "صفر روپے اور پچاس پیسے"
+ * appendOnly:      appends "صرف" at the end
  */
 export function formatCurrency(
   num: number,
@@ -29,20 +29,17 @@ export function formatCurrency(
   const rupeeWords = convertToUrdu(intPart);
   let result: string;
 
+  // Build "X روپے"
+  result = `${rupeeWords} ${currencyName}`;
+
+  // Add paisa if present: "اور Y پیسے"
+  if (decPart !== null && decPart > 0) {
+    const paisaWords = convertToUrdu(decPart);
+    result += ` ${SPECIAL.AND} ${paisaWords} ${fractionalName}`;
+  }
+
+  // Only append "صرف" if appendOnly is true
   if (appendOnly) {
-    // appendOnly: just add صرف at the end, no currency labels
-    result = `${rupeeWords} ${SPECIAL.ONLY}`;
-  } else {
-    // Build "X روپے"
-    result = `${rupeeWords} ${currencyName}`;
-
-    // Add paisa if present: "اور Y پیسے"
-    if (decPart !== null && decPart > 0) {
-      const paisaWords = convertToUrdu(decPart);
-      result += ` ${SPECIAL.AND} ${paisaWords} ${fractionalName}`;
-    }
-
-    // Always append "صرف" in currency mode
     result += ` ${SPECIAL.ONLY}`;
   }
 

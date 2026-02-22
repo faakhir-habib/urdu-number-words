@@ -39,7 +39,7 @@ No npm package existed that handled this correctly — until now.
 
 - ✅ Numbers to Urdu words (0 to کھربوں and beyond)
 - ✅ South Asian numbering system (ہزار، لاکھ، کروڑ، ارب، کھرب)
-- ✅ Pakistani Rupee (PKR) currency mode with "روپے صرف" suffix
+- ✅ Pakistani Rupee (PKR) currency mode with optional "صرف" suffix
 - ✅ Western to Urdu digit conversion (123 → ۱۲۳)
 - ✅ Ordinal numbers (پہلا، دوسرا، تیسرا)
 - ✅ Negative and decimal number support
@@ -85,13 +85,17 @@ toUrduWords(-42);        // "منفی بیالیس"
 import { toUrduWords } from 'urdu-number-words';
 
 toUrduWords(5000, { currency: true });
-// "پانچ ہزار روپے صرف"
+// "پانچ ہزار روپے"
 
 toUrduWords(1500.75, { currency: true });
-// "ایک ہزار پانچ سو روپے اور پچھتر پیسے صرف"
+// "ایک ہزار پانچ سو روپے اور پچھتر پیسے"
 
 toUrduWords(250000, { currency: true });
-// "ڈھائی لاکھ روپے صرف"
+// "ڈھائی لاکھ روپے"
+
+// Append "صرف" when appendOnly is true
+toUrduWords(5000, { currency: true, appendOnly: true });
+// "پانچ ہزار روپے صرف"
 ```
 
 ### Urdu Digits
@@ -201,7 +205,7 @@ This package uses the **South Asian numbering system** used in Pakistan, India, 
 
 ```typescript
 const amount = 250750.50;
-const inWords = toUrduWords(amount, { currency: true });
+const inWords = toUrduWords(amount, { currency: true, appendOnly: true });
 // "دو لاکھ پچاس ہزار سات سو پچاس روپے اور پچاس پیسے صرف"
 
 const inDigits = toUrduDigits(amount);
@@ -216,7 +220,7 @@ function formatUrduAmount(amount: number): string {
 }
 
 formatUrduAmount(15000);
-// "۱۵۰۰۰ (پندرہ ہزار روپے صرف)"
+// "۱۵۰۰۰ (پندرہ ہزار روپے)"
 ```
 
 ### Custom Currency
@@ -226,6 +230,7 @@ toUrduWords(1500, {
   currency: true,
   currencyName: "ڈالر",
   fractionalName: "سینٹ",
+  appendOnly: true,
 });
 // "ایک ہزار پانچ سو ڈالر صرف"
 ```
@@ -235,7 +240,7 @@ toUrduWords(1500, {
 ```typescript
 toUrduWords(0);                    // "صفر"
 toUrduWords(-1);                   // "منفی ایک"
-toUrduWords(0.5, { currency: true }); // "صفر روپے اور پچاس پیسے صرف"
+toUrduWords(0.5, { currency: true }); // "صفر روپے اور پچاس پیسے"
 toUrduWords(1000000);              // "دس لاکھ"
 toUrduWords("999999999999");       // Handles large numbers via string input
 ```

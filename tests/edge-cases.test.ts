@@ -52,7 +52,7 @@ describe('Edge cases', () => {
     it('handles floating point drift (0.1 + 0.2)', () => {
       // 0.1 + 0.2 = 0.30000000000000004
       expect(toUrduWords(0.1 + 0.2, { currency: true })).toBe(
-        'صفر روپے اور تیس پیسے صرف'
+        'صفر روپے اور تیس پیسے'
       );
     });
 
@@ -60,12 +60,12 @@ describe('Edge cases', () => {
       // 1500.755 * 100 = 150075.5, Math.round gives 150076 (75 + 1)
       // So it becomes 1500.76 = 76 paisa
       expect(toUrduWords(1500.755, { currency: true })).toBe(
-        'ایک ہزار پانچ سو روپے اور چھہتر پیسے صرف'
+        'ایک ہزار پانچ سو روپے اور چھہتر پیسے'
       );
     });
 
     it('handles 0.01 (1 paisa)', () => {
-      expect(toUrduWords(0.01, { currency: true })).toBe('صفر روپے اور ایک پیسے صرف');
+      expect(toUrduWords(0.01, { currency: true })).toBe('صفر روپے اور ایک پیسے');
     });
   });
 
@@ -106,7 +106,7 @@ describe('Edge cases', () => {
       const result = toUrduWords(-1500, { currency: true });
       expect(result).toContain('منفی');
       expect(result).toContain('روپے');
-      expect(result).toContain('صرف');
+      expect(result).not.toContain('صرف');
     });
 
     it('handles negative currency with decimal', () => {
@@ -114,16 +114,16 @@ describe('Edge cases', () => {
       expect(result).toContain('منفی');
       expect(result).toContain('روپے');
       expect(result).toContain('پیسے');
-      expect(result).toContain('صرف');
+      expect(result).not.toContain('صرف');
     });
   });
 
   describe('AppendOnly mode', () => {
-    it('skips currency name when appendOnly is true', () => {
+    it('only appends صرف when appendOnly is true', () => {
       const result = toUrduWords(1500, { currency: true, appendOnly: true });
-      expect(result).toBe('ایک ہزار پانچ سو صرف');
-      // appendOnly mode should only add صرف without روپے
-      expect(result).not.toContain('روپے');
+      expect(result).toBe('ایک ہزار پانچ سو روپے صرف');
+      // appendOnly mode appends صرف at the end
+      expect(result).toContain('روپے');
       expect(result).toContain('صرف');
     });
   });
