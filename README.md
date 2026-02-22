@@ -15,7 +15,7 @@ Uses the South Asian numbering system — لاکھ، کروڑ، ارب
 [![TypeScript](https://img.shields.io/badge/TypeScript-Ready-blue?style=flat-square&logo=typescript)](https://www.typescriptlang.org/)
 [![Publish to npm](https://github.com/faakhir-habib/urdu-number-words/actions/workflows/publish.yml/badge.svg)](https://github.com/faakhir-habib/urdu-number-words/actions/workflows/publish.yml)
 
-[Installation](#installation) · [Usage](#usage) · [API](#api) · [Currency Mode](#currency-mode) · [Contributing](#contributing)
+[Installation](#installation) · [Usage](#usage) · [API](#api) · [Examples](#real-world-examples) · [Contributing](#contributing)
 
 </div>
 
