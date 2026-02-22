@@ -1,6 +1,6 @@
 {
   "name": "urdu-number-words",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Convert numbers to Urdu words using the South Asian numbering system (لاکھ، کروڑ، ارب). Zero dependencies.",
   "author": "Faakhir Habib",
   "license": "MIT",
