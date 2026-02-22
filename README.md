@@ -13,6 +13,7 @@ Uses the South Asian numbering system — لاکھ، کروڑ، ارب
 [![license](https://img.shields.io/npm/l/urdu-number-words.svg?style=flat-square)](https://github.com/faakhir-habib/urdu-number-words/blob/main/LICENSE)
 [![bundle size](https://img.shields.io/bundlephobia/minzip/urdu-number-words?style=flat-square)](https://bundlephobia.com/package/urdu-number-words)
 [![TypeScript](https://img.shields.io/badge/TypeScript-Ready-blue?style=flat-square&logo=typescript)](https://www.typescriptlang.org/)
+[![Publish to npm](https://github.com/faakhir-habib/urdu-number-words/actions/workflows/publish.yml/badge.svg)](https://github.com/faakhir-habib/urdu-number-words/actions/workflows/publish.yml)
 
 [Installation](#installation) · [Usage](#usage) · [API](#api) · [Currency Mode](#currency-mode) · [Contributing](#contributing)
 
