@@ -284,8 +284,8 @@ Please open an issue first to discuss what you'd like to change.
 
 ## Related Packages
 
-- [`to-words`](https://www.npmjs.com/package/to-words) — Multi-locale number to words (no Urdu support)
-- [`number-to-arabic-words`](https://www.npmjs.com/package/number-to-arabic-words) — Arabic number words (not Urdu)
+- [`to-words`](https://www.npmjs.com/package/to-words) — Multi-locale number to words
+- [`number-to-arabic-words`](https://www.npmjs.com/package/number-to-arabic-words) — Arabic number words
 
 ## License
 
